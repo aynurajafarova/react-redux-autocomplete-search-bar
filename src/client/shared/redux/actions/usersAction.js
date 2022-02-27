@@ -18,3 +18,10 @@ export const fetchUsers = () => (dispatch) => {
       })
     );
 };
+
+export const searchCharacter = (character) => (dispatch) => {
+  dispatch({
+    type: types.SEARCH_CHARACTER,
+    payload: character,
+  });
+};
