@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+
+import UserNameSearchPage from "./client/apps/users/view/UserNameSearchPage";
 
 const App = () => {
   return (
     <div className="App">
-      123
+      <UserNameSearchPage />
     </div>
   );
-}
+};
 
 export default App;
