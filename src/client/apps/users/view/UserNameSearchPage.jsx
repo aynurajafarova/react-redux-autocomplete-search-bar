@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+import UserNameSearchForm from "../components/UserNameSearchForm/UserNameSearchForm";
 import { fetchUsers } from "../../../shared/redux/actions/usersAction";
 
 const UserNameSearchPage = () => {
@@ -14,7 +15,7 @@ const UserNameSearchPage = () => {
 
   return (
     <section className="search-name">
-      <p>UserNameSearchPage</p>
+      <UserNameSearchForm />
     </section>
   );
 };
