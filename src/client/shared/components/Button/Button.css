@@ -1,0 +1,27 @@
+.btn {
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-warning {
+  background-color: #ffff35;
+  height: 40px;
+  padding: 0px 10px;
+  min-width: 10%;
+  color: #24292f;
+  font-size: 16px;
+}
+button[disabled] {
+  cursor: not-allowed;
+}
+.btn-warning:disabled {
+  background-color: #e3e35a;
+}
+.btn-warning:disabled,
+.btn-warning:disabled svg {
+  color: #c8c9cb;
+  fill: #c8c9cb;
+}
+.btn-warning svg {
+  margin-right: 4px;
+}
