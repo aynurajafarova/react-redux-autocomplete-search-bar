@@ -7,7 +7,7 @@ import {
   fetchSingleUser,
 } from "../../../../shared/redux/actions/usersAction";
 
-const SearchUserForm = ({ userName, setUserName }) => {
+const SearchUserForm = ({ userName, setUserName, setShowUserInfoCard }) => {
   const dispatch = useDispatch();
   const { users } = useSelector((state) => state.users);
 
@@ -22,12 +22,15 @@ const SearchUserForm = ({ userName, setUserName }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch(fetchSingleUser(users, userName));
+    setShowUserInfoCard(true);
   };
 
   return (
     <form onSubmit={onSubmit}>
       <input type="text" value={userName} onChange={handleUserName} />
-      <button type="submit">Search</button>
+      <button disabled={!userName} type="submit">
+        Search
+      </button>
     </form>
   );
 };
