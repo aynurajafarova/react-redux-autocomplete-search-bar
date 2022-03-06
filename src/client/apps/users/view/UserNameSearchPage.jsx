@@ -8,7 +8,7 @@ import { fetchUsers } from "../../../shared/redux/actions/usersAction";
 const UserNameSearchPage = () => {
   const dispatch = useDispatch();
 
-  const { searchedUsers } = useSelector((state) => state.users);
+  const { showSearchedUsers } = useSelector((state) => state.users);
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -17,7 +17,7 @@ const UserNameSearchPage = () => {
   return (
     <section className="search-name">
       <UserNameSearchForm />
-      {searchedUsers.length > 0 && <SearchedUsersList />}
+      {showSearchedUsers && <SearchedUsersList />}
     </section>
   );
 };

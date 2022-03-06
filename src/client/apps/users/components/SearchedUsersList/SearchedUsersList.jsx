@@ -6,11 +6,16 @@ const SearchedUsersList = () => {
 
   return (
     <div>
-      <ul>
-        {searchedUsers.map((user, index) => {
-          return <li key={index}>{user.name}</li>;
-        })}
-      </ul>
+      <div>Results: {searchedUsers.length}</div>
+      {searchedUsers.length > 0 ? (
+        <ul>
+          {searchedUsers.map((user, index) => {
+            return <li key={index}>{user.name}</li>;
+          })}
+        </ul>
+      ) : (
+        "User not found"
+      )}
     </div>
   );
 };

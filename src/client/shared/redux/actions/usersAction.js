@@ -29,7 +29,13 @@ export const getSearchedUsersList = (usersArr, inputVal) => (dispatch) => {
   });
 
   dispatch({
-    type: types.GET_SEARCHED_USERS_LIST,
+    type: types.GET_SEARCHED_USERS_LIST_SUCCESS,
     payload: searchedUsersList,
+  });
+};
+
+export const hideSearchedUsersList = () => (dispatch) => {
+  dispatch({
+    type: types.HIDE_SEARCHED_USERS_LIST,
   });
 };
