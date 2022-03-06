@@ -1,0 +1,15 @@
+.search-user-form {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.search-user-form input {
+  min-height: 38px;
+  width: 50%;
+  margin-right: 4%;
+}
+.search-user-form .btn-warning {
+  height: 40px;
+  min-width: 20%;
+}

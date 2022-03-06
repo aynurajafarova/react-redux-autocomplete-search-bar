@@ -1,6 +1,4 @@
-.search-input {
-  min-height: 38px;
-  width: 25%;
+input {
   padding: 0px 10px;
   border-radius: 6px;
   outline: none;
@@ -8,7 +6,8 @@
   background-color: inherit;
   font-size: 14px;
 }
-.search-input:focus,
-.search-input::placeholder {
+input,
+input:focus,
+input::placeholder {
   color: #c8c9cb;
 }

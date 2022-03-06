@@ -9,6 +9,8 @@ import {
 import Input from "../../../../shared/components/Input/Input";
 import Button from "../../../../shared/components/Button/Button";
 
+import "./SearchUserForm.css";
+
 const SearchUserForm = ({ userName, setUserName, setShowUserInfoCard }) => {
   const dispatch = useDispatch();
   const { users } = useSelector((state) => state.users);
@@ -28,7 +30,7 @@ const SearchUserForm = ({ userName, setUserName, setShowUserInfoCard }) => {
   };
 
   return (
-    <form onSubmit={onSubmit} className="center">
+    <form className="search-user-form" onSubmit={onSubmit}>
       <Input
         type="text"
         placeholder="Search user by name..."

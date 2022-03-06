@@ -1,11 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
+import "./SearchedUsersList.css";
+
 const SearchedUsersList = ({ setUserName }) => {
   const { searchedUsers } = useSelector((state) => state.users);
 
   return (
-    <div>
+    <div className="searched-users-list">
       <div>Results: {searchedUsers.length}</div>
       {searchedUsers.length > 0 ? (
         <ul>

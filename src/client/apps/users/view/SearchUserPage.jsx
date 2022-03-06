@@ -18,11 +18,11 @@ const UserNameSearchPage = () => {
   }, []);
 
   return (
-    <section className="search-name">
+    <>
       <SearchUserForm {...{ userName, setUserName, setShowUserInfoCard }} />
       {showSearchedUsers && <SearchedUsersList {...{ setUserName }} />}
       {showUserInfoCard && <UserInfoCard />}
-    </section>
+    </>
   );
 };
 
