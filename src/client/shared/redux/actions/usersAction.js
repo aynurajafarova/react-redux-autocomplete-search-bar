@@ -34,12 +34,6 @@ export const fetchSearchedUsersList = (usersArr, inputVal) => (dispatch) => {
   });
 };
 
-export const hideSearchedUsersList = () => (dispatch) => {
-  dispatch({
-    type: types.HIDE_SEARCHED_USERS_LIST,
-  });
-};
-
 export const fetchSingleUser = (usersArr, name) => (dispatch) => {
   const [singleUser] = usersArr.filter(
     (user) => user.name.toUpperCase() == name.toUpperCase()

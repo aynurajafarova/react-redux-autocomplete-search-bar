@@ -3,8 +3,13 @@ import { useSelector } from "react-redux";
 
 import "./SearchedUsersList.css";
 
-const SearchedUsersList = ({ setUserName }) => {
+const SearchedUsersList = ({ setUserName, setOpenSearchedUsersList }) => {
   const { searchedUsers } = useSelector((state) => state.users);
+
+  const handleClick = (name) => {
+    setUserName(name);
+    setOpenSearchedUsersList(false);
+  };
 
   return (
     <div className="searched-users-list">
@@ -15,7 +20,7 @@ const SearchedUsersList = ({ setUserName }) => {
               <li
                 key={index}
                 onClick={() => {
-                  setUserName(user.name);
+                  handleClick(user.name);
                 }}
               >
                 {user.name}

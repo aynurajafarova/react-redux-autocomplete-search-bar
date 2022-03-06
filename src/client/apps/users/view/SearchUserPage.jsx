@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import SearchUserForm from "../components/SearchUserForm/SearchUserForm";
 import SearchedUsersList from "../components/SearchedUsersList/SearchedUsersList";
@@ -9,9 +9,9 @@ import { fetchUsers } from "../../../shared/redux/actions/usersAction";
 const UserNameSearchPage = () => {
   const [userName, setUserName] = useState("");
   const [showUserInfoCard, setShowUserInfoCard] = useState(false);
+  const [openSearchedUsersList, setOpenSearchedUsersList] = useState(false);
 
   const dispatch = useDispatch();
-  const { showSearchedUsers } = useSelector((state) => state.users);
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -19,8 +19,17 @@ const UserNameSearchPage = () => {
 
   return (
     <>
-      <SearchUserForm {...{ userName, setUserName, setShowUserInfoCard }} />
-      {showSearchedUsers && <SearchedUsersList {...{ setUserName }} />}
+      <SearchUserForm
+        {...{
+          userName,
+          setUserName,
+          setShowUserInfoCard,
+          setOpenSearchedUsersList,
+        }}
+      />
+      {openSearchedUsersList && (
+        <SearchedUsersList {...{ setUserName, setOpenSearchedUsersList }} />
+      )}
       {showUserInfoCard && <UserInfoCard />}
     </>
   );

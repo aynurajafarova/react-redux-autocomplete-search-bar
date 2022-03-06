@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 import {
   fetchSearchedUsersList,
-  hideSearchedUsersList,
   fetchSingleUser,
 } from "../../../../shared/redux/actions/usersAction";
 import Input from "../../../../shared/components/Input/Input";
@@ -11,21 +10,30 @@ import Button from "../../../../shared/components/Button/Button";
 
 import "./SearchUserForm.css";
 
-const SearchUserForm = ({ userName, setUserName, setShowUserInfoCard }) => {
+const SearchUserForm = ({
+  userName,
+  setUserName,
+  setShowUserInfoCard,
+  setOpenSearchedUsersList,
+}) => {
   const dispatch = useDispatch();
   const { users } = useSelector((state) => state.users);
 
   const handleUserName = (event) => {
     setUserName(event.target.value);
 
-    event.target.value
-      ? dispatch(fetchSearchedUsersList(users, event.target.value))
-      : dispatch(hideSearchedUsersList());
+    if (event.target.value) {
+      dispatch(fetchSearchedUsersList(users, event.target.value));
+      setOpenSearchedUsersList(true);
+    } else {
+      setOpenSearchedUsersList(false);
+    }
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch(fetchSingleUser(users, userName));
+    setOpenSearchedUsersList(false);
     setShowUserInfoCard(true);
   };
 

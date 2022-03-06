@@ -5,7 +5,6 @@ const initialState = {
   errMessage: "",
   isLoading: false,
   searchedUsers: [],
-  showSearchedUsers: false,
   singleUser: {},
 };
 
@@ -36,19 +35,16 @@ const usersReducer = (state = initialState, { type, payload }) => {
         isLoading: false,
         errMessage: "",
         searchedUsers: payload,
-        showSearchedUsers: true,
       };
     case types.HIDE_SEARCHED_USERS_LIST:
       return {
         ...state,
         searchedUsers: [],
-        showSearchedUsers: false,
       };
     case types.FETCH_SINGLE_USER_SUCCESS:
       return {
         ...state,
         singleUser: payload,
-        showSearchedUsers: false,
       };
     default:
       return state;
