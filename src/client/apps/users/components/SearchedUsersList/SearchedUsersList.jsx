@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-const SearchedUsersList = () => {
+const SearchedUsersList = ({ setUserName }) => {
   const { searchedUsers } = useSelector((state) => state.users);
 
   return (
@@ -10,7 +10,16 @@ const SearchedUsersList = () => {
       {searchedUsers.length > 0 ? (
         <ul>
           {searchedUsers.map((user, index) => {
-            return <li key={index}>{user.name}</li>;
+            return (
+              <li
+                key={index}
+                onClick={() => {
+                  setUserName(user.name);
+                }}
+              >
+                {user.name}
+              </li>
+            );
           })}
         </ul>
       ) : (

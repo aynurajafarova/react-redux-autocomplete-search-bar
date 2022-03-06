@@ -6,11 +6,13 @@ import {
   hideSearchedUsersList,
 } from "../../../../shared/redux/actions/usersAction";
 
-const UserNameSearchForm = () => {
+const UserNameSearchForm = ({ userName, setUserName }) => {
   const dispatch = useDispatch();
   const { users } = useSelector((state) => state.users);
 
   const handleSearchCharacter = (event) => {
+    setUserName(event.target.value);
+
     event.target.value
       ? dispatch(getSearchedUsersList(users, event.target.value))
       : dispatch(hideSearchedUsersList());
@@ -18,7 +20,7 @@ const UserNameSearchForm = () => {
 
   return (
     <form>
-      <input type="text" onChange={handleSearchCharacter} />
+      <input type="text" value={userName} onChange={handleSearchCharacter} />
       <button>Search</button>
     </form>
   );
