@@ -1,14 +1,15 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-// import { setInputValue } from "../../../../shared/redux/actions/usersAction";
+import { getSearchedUsersList } from "../../../../shared/redux/actions/usersAction";
 
 const UserNameSearchForm = () => {
   const dispatch = useDispatch();
+  const { users } = useSelector((state) => state.users);
 
   const handleSearchCharacter = (event) => {
     // dispatch(setInputValue(event.target.value));
-    console.log(event.target.value);
+    dispatch(getSearchedUsersList(users, event.target.value));
   };
 
   return (

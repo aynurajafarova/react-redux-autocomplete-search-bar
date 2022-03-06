@@ -25,3 +25,18 @@ export const setInputValue = (value) => (dispatch) => {
     payload: value,
   });
 };
+
+export const getSearchedUsersList = (usersArr, inputVal) => (dispatch) => {
+  let searchedUsersList = usersArr.filter((item, index) => {
+    return (
+      inputVal &&
+      item.name.substr(0, inputVal.length).toUpperCase() ==
+        inputVal.toUpperCase()
+    );
+  });
+
+  dispatch({
+    type: types.GET_SEARCHED_USERS_LIST,
+    payload: searchedUsersList,
+  });
+};
