@@ -19,9 +19,9 @@ export const fetchUsers = () => (dispatch) => {
     );
 };
 
-export const searchCharacter = (character) => (dispatch) => {
+export const setInputValue = (value) => (dispatch) => {
   dispatch({
-    type: types.SEARCH_CHARACTER,
-    payload: character,
+    type: types.SET_INPUT_VALUE,
+    payload: value,
   });
 };

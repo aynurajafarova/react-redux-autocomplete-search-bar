@@ -4,7 +4,7 @@ const initialState = {
   users: [],
   errMessage: "",
   isLoading: false,
-  searchedCharacter: "",
+  inputValue: "",
 };
 
 const usersReducer = (state = initialState, { type, payload }) => {
@@ -15,7 +15,7 @@ const usersReducer = (state = initialState, { type, payload }) => {
         isLoading: true,
         users: [],
         errMessage: "",
-        searchedCharacter: "",
+        inputValue: "",
       };
     case types.FETCH_USERS_SUCCESS:
       return {
@@ -23,7 +23,7 @@ const usersReducer = (state = initialState, { type, payload }) => {
         isLoading: false,
         users: payload,
         errMessage: "",
-        searchedCharacter: "",
+        inputValue: "",
       };
     case types.FETCH_USERS_FAILURE:
       return {
@@ -31,15 +31,15 @@ const usersReducer = (state = initialState, { type, payload }) => {
         isLoading: false,
         users: [],
         errMessage: payload,
-        searchedCharacter: "",
+        inputValue: "",
       };
-    case types.SEARCH_CHARACTER:
+    case types.SET_INPUT_VALUE:
       return {
         ...state,
         isLoading: false,
         users: [],
         errMessage: "",
-        searchedCharacter: payload,
+        inputValue: payload,
       };
     default:
       return state;

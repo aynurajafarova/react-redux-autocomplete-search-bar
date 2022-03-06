@@ -1,13 +1,14 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { searchCharacter } from "../../../../shared/redux/actions/usersAction";
+// import { setInputValue } from "../../../../shared/redux/actions/usersAction";
 
 const UserNameSearchForm = () => {
   const dispatch = useDispatch();
 
   const handleSearchCharacter = (event) => {
-    dispatch(searchCharacter(event.target.value));
+    // dispatch(setInputValue(event.target.value));
+    console.log(event.target.value);
   };
 
   return (
