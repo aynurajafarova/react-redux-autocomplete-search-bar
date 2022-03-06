@@ -44,6 +44,7 @@ const usersReducer = (state = initialState, { type, payload }) => {
     case types.FETCH_SINGLE_USER_SUCCESS:
       return {
         ...state,
+        searchedUsers: [],
         singleUser: payload,
       };
     default:
