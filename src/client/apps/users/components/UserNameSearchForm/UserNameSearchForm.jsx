@@ -8,7 +8,6 @@ const UserNameSearchForm = () => {
   const { users } = useSelector((state) => state.users);
 
   const handleSearchCharacter = (event) => {
-    // dispatch(setInputValue(event.target.value));
     dispatch(getSearchedUsersList(users, event.target.value));
   };
 

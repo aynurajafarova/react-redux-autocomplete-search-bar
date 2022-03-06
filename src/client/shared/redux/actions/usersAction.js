@@ -19,13 +19,6 @@ export const fetchUsers = () => (dispatch) => {
     );
 };
 
-export const setInputValue = (value) => (dispatch) => {
-  dispatch({
-    type: types.SET_INPUT_VALUE,
-    payload: value,
-  });
-};
-
 export const getSearchedUsersList = (usersArr, inputVal) => (dispatch) => {
   let searchedUsersList = usersArr.filter((item, index) => {
     return (
