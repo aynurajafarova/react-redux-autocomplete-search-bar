@@ -6,6 +6,7 @@ import {
   hideSearchedUsersList,
   fetchSingleUser,
 } from "../../../../shared/redux/actions/usersAction";
+import Input from "../../../../shared/components/Input/Input";
 
 const SearchUserForm = ({ userName, setUserName, setShowUserInfoCard }) => {
   const dispatch = useDispatch();
@@ -27,7 +28,12 @@ const SearchUserForm = ({ userName, setUserName, setShowUserInfoCard }) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <input type="text" value={userName} onChange={handleUserName} />
+      <Input
+        type="text"
+        placeholder="Search user by name..."
+        value={userName}
+        onChange={handleUserName}
+      />
       <button disabled={!userName} type="submit">
         Search
       </button>
