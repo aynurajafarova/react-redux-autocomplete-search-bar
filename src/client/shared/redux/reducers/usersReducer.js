@@ -4,7 +4,7 @@ const initialState = {
   users: [],
   errMessage: "",
   isLoading: false,
-  searchedUsers: [],
+  searchedUsers: []
 };
 
 const usersReducer = (state = initialState, { type, payload }) => {
@@ -14,16 +14,12 @@ const usersReducer = (state = initialState, { type, payload }) => {
         ...state,
         isLoading: true,
         users: [],
-        errMessage: "",
-        searchedUsers: [],
       };
     case types.FETCH_USERS_SUCCESS:
       return {
         ...state,
         isLoading: false,
         users: payload,
-        errMessage: "",
-        searchedUsers: [],
       };
     case types.FETCH_USERS_FAILURE:
       return {
@@ -31,7 +27,6 @@ const usersReducer = (state = initialState, { type, payload }) => {
         isLoading: false,
         users: [],
         errMessage: payload,
-        searchedUsers: [],
       };
     case types.GET_SEARCHED_USERS_LIST:
       return {
