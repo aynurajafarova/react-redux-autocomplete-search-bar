@@ -2,3 +2,27 @@
   width: 50%;
   margin: 0 auto;
 }
+.searched-users-list ul,
+.searched-users-list p {
+  border-radius: 0px 0px 6px 6px;
+  background-color: #f3f2f2;
+}
+.searched-users-list p {
+  width: 51%;
+  padding: 10px;
+}
+.searched-users-list ul {
+  width: 54%;
+  overflow: auto;
+}
+.searched-users-list ul li {
+  padding: 10px;
+  border-bottom: 1px solid #57606a;
+  cursor: pointer;
+}
+.searched-users-list ul li:last-child {
+  border-bottom: none;
+}
+.searched-users-list ul li:hover {
+  background-color: #cfcece;
+}

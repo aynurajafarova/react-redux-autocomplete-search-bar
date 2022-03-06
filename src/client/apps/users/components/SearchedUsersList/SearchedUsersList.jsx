@@ -8,7 +8,6 @@ const SearchedUsersList = ({ setUserName }) => {
 
   return (
     <div className="searched-users-list">
-      <div>Results: {searchedUsers.length}</div>
       {searchedUsers.length > 0 ? (
         <ul>
           {searchedUsers.map((user, index) => {
@@ -25,7 +24,7 @@ const SearchedUsersList = ({ setUserName }) => {
           })}
         </ul>
       ) : (
-        "User not found"
+        <p>Not found</p>
       )}
     </div>
   );
