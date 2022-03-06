@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import UserNameSearchForm from "../components/UserNameSearchForm/UserNameSearchForm";
+import SearchUserForm from "../components/SearchUserForm/SearchUserForm";
 import SearchedUsersList from "../components/SearchedUsersList/SearchedUsersList";
 import { fetchUsers } from "../../../shared/redux/actions/usersAction";
 
@@ -17,7 +17,7 @@ const UserNameSearchPage = () => {
 
   return (
     <section className="search-name">
-      <UserNameSearchForm {...{ userName, setUserName }} />
+      <SearchUserForm {...{ userName, setUserName }} />
       {showSearchedUsers && <SearchedUsersList {...{ setUserName }} />}
     </section>
   );

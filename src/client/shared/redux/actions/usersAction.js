@@ -29,7 +29,7 @@ export const getSearchedUsersList = (usersArr, inputVal) => (dispatch) => {
   });
 
   dispatch({
-    type: types.GET_SEARCHED_USERS_LIST_SUCCESS,
+    type: types.FETCH_SEARCHED_USERS_LIST_SUCCESS,
     payload: searchedUsersList,
   });
 };

@@ -29,7 +29,7 @@ const usersReducer = (state = initialState, { type, payload }) => {
         users: [],
         errMessage: payload,
       };
-    case types.GET_SEARCHED_USERS_LIST_SUCCESS:
+    case types.FETCH_SEARCHED_USERS_LIST_SUCCESS:
       return {
         ...state,
         isLoading: false,
