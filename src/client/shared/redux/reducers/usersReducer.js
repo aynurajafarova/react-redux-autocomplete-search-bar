@@ -6,6 +6,7 @@ const initialState = {
   isLoading: false,
   searchedUsers: [],
   showSearchedUsers: false,
+  singleUser: {},
 };
 
 const usersReducer = (state = initialState, { type, payload }) => {
@@ -41,6 +42,12 @@ const usersReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         searchedUsers: [],
+        showSearchedUsers: false,
+      };
+    case types.FETCH_SINGLE_USER_SUCCESS:
+      return {
+        ...state,
+        singleUser: payload,
         showSearchedUsers: false,
       };
     default:

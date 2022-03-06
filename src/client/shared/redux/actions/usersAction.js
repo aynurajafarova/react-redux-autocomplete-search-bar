@@ -19,7 +19,7 @@ export const fetchUsers = () => (dispatch) => {
     );
 };
 
-export const getSearchedUsersList = (usersArr, inputVal) => (dispatch) => {
+export const fetchSearchedUsersList = (usersArr, inputVal) => (dispatch) => {
   let searchedUsersList = usersArr.filter((item, index) => {
     return (
       inputVal &&
@@ -37,5 +37,16 @@ export const getSearchedUsersList = (usersArr, inputVal) => (dispatch) => {
 export const hideSearchedUsersList = () => (dispatch) => {
   dispatch({
     type: types.HIDE_SEARCHED_USERS_LIST,
+  });
+};
+
+export const fetchSingleUser = (usersArr, name) => (dispatch) => {
+  const [singleUser] = usersArr.filter(
+    (user) => user.name.toUpperCase() == name.toUpperCase()
+  );
+
+  dispatch({
+    type: types.FETCH_SINGLE_USER_SUCCESS,
+    payload: singleUser,
   });
 };

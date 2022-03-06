@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import SearchUserForm from "../components/SearchUserForm/SearchUserForm";
 import SearchedUsersList from "../components/SearchedUsersList/SearchedUsersList";
+import UserInfoCard from "../components/UserInfoCard/UserInfoCard";
 import { fetchUsers } from "../../../shared/redux/actions/usersAction";
 
 const UserNameSearchPage = () => {
@@ -19,6 +20,7 @@ const UserNameSearchPage = () => {
     <section className="search-name">
       <SearchUserForm {...{ userName, setUserName }} />
       {showSearchedUsers && <SearchedUsersList {...{ setUserName }} />}
+      <UserInfoCard />
     </section>
   );
 };

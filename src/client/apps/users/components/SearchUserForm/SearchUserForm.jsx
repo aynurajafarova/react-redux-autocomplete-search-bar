@@ -2,8 +2,9 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
-  getSearchedUsersList,
+  fetchSearchedUsersList,
   hideSearchedUsersList,
+  fetchSingleUser,
 } from "../../../../shared/redux/actions/usersAction";
 
 const SearchUserForm = ({ userName, setUserName }) => {
@@ -14,14 +15,19 @@ const SearchUserForm = ({ userName, setUserName }) => {
     setUserName(event.target.value);
 
     event.target.value
-      ? dispatch(getSearchedUsersList(users, event.target.value))
+      ? dispatch(fetchSearchedUsersList(users, event.target.value))
       : dispatch(hideSearchedUsersList());
   };
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+    dispatch(fetchSingleUser(users, userName));
+  };
+
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <input type="text" value={userName} onChange={handleUserName} />
-      <button>Search</button>
+      <button type="submit">Search</button>
     </form>
   );
 };
