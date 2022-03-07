@@ -1,10 +1,9 @@
 .user-id-card {
-  width: 50%;
-  margin: 3% auto 0;
+  margin: 3% auto;
 }
 .user-id-card__content {
   background: #c8c9cb;
-  width: 62%;
+  width: 60%;
   border-radius: 6px;
   padding: 20px 20px 35px;
   box-sizing: border-box;
@@ -12,6 +11,7 @@
 }
 .user-id-card__content__header {
   padding: 10px 0px;
+  box-sizing: border-box;
 }
 .user-id-card__content__header h2 {
   text-align: center;
@@ -20,6 +20,7 @@
 }
 .user-id-card__content__img {
   padding: 15px 0px;
+  box-sizing: border-box;
 }
 .user-id-card__content__img img {
   width: 35%;
@@ -36,8 +37,19 @@
   font-weight: 500;
   text-transform: capitalize;
 }
-/* @media only screen and (max-width: 480px) {
-  .user-id-card {
-    width: 85%;
+@media only screen and (max-width: 480px) {
+  .user-id-card,
+  .user-id-card__content,
+  .user-id-card__content__details {
+    width: 100%;
   }
-} */
+  .user-id-card__content__header h2 {
+    font-size: 20px;
+  }
+  .user-id-card__field {
+    font-size: 16px;
+  }
+  .user-id-card__content {
+    padding-bottom: 25px;
+  }
+}
