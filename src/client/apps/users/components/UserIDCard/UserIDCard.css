@@ -3,7 +3,7 @@
 }
 .user-id-card__content {
   background: #c8c9cb;
-  width: 60%;
+  width: 74%;
   border-radius: 6px;
   padding: 20px 20px 35px;
   box-sizing: border-box;
@@ -23,7 +23,7 @@
   box-sizing: border-box;
 }
 .user-id-card__content__img img {
-  width: 35%;
+  width: 30%;
 }
 .user-id-card__content__details {
   width: 75%;
