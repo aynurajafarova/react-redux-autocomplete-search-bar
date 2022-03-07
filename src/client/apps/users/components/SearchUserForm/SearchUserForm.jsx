@@ -21,7 +21,7 @@ const SearchUserForm = ({
 
   const handleUserName = (event) => {
     setUserName(event.target.value);
-
+    setShowUserInfoCard(false);
     if (event.target.value) {
       dispatch(fetchSearchedUsersList(users, event.target.value));
       setOpenSearchedUsersList(true);
