@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import SearchUserForm from "../components/SearchUserForm/SearchUserForm";
 import SearchedUsersList from "../components/SearchedUsersList/SearchedUsersList";
 import UserIDCard from "../components/UserIDCard/UserIDCard";
 import Header from "../../../shared/components/Header/Header";
+import Loading from "../../../shared/components/Loading/Loading";
+import Container from "../../../shared/components/Container/Container";
 import { fetchUsers } from "../../../shared/redux/actions/usersAction";
 
 const UserNameSearchPage = () => {
@@ -14,12 +16,16 @@ const UserNameSearchPage = () => {
 
   const dispatch = useDispatch();
 
+  const { isLoading } = useSelector((state) => state.users);
+
   useEffect(() => {
     dispatch(fetchUsers());
   }, []);
 
-  return (
-    <>
+  return isLoading ? (
+    <Loading />
+  ) : (
+    <Container>
       <Header title="Autocomplete" />
       <SearchUserForm
         {...{
@@ -33,7 +39,7 @@ const UserNameSearchPage = () => {
         <SearchedUsersList {...{ setUserName, setOpenSearchedUsersList }} />
       )}
       {showUserIDCard && <UserIDCard />}
-    </>
+    </Container>
   );
 };
 
