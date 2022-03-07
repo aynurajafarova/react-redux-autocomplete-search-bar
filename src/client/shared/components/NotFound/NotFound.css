@@ -5,6 +5,7 @@
   border-radius: 6px;
   color: #24292f;
   padding: 50px;
+  box-sizing: border-box;
 }
 .not-found__title {
   margin-top: 8%;

@@ -1,9 +1,12 @@
 .user-id-card {
   margin: 3% auto;
 }
+.user-id-card .not-found,
+.user-id-card__content {
+  width: 74%;
+}
 .user-id-card__content {
   background: #c8c9cb;
-  width: 74%;
   border-radius: 6px;
   padding: 20px 20px 35px;
   box-sizing: border-box;
@@ -40,7 +43,8 @@
 @media only screen and (max-width: 480px) {
   .user-id-card,
   .user-id-card__content,
-  .user-id-card__content__details {
+  .user-id-card__content__details,
+  .user-id-card .not-found {
     width: 100%;
   }
   .user-id-card__content__header h2 {
@@ -51,5 +55,8 @@
   }
   .user-id-card__content {
     padding-bottom: 25px;
+  }
+  .user-id-card .not-found {
+    padding: 40px;
   }
 }
