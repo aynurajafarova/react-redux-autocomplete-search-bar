@@ -8,7 +8,7 @@ import { fetchUsers } from "../../../shared/redux/actions/usersAction";
 
 const UserNameSearchPage = () => {
   const [userName, setUserName] = useState("");
-  const [showUserInfoCard, setShowUserInfoCard] = useState(false);
+  const [showUserIDCard, setShowUserIDCard] = useState(false);
   const [openSearchedUsersList, setOpenSearchedUsersList] = useState(false);
 
   const dispatch = useDispatch();
@@ -23,14 +23,14 @@ const UserNameSearchPage = () => {
         {...{
           userName,
           setUserName,
-          setShowUserInfoCard,
+          setShowUserIDCard,
           setOpenSearchedUsersList,
         }}
       />
       {openSearchedUsersList && (
         <SearchedUsersList {...{ setUserName, setOpenSearchedUsersList }} />
       )}
-      {showUserInfoCard && <UserIDCard />}
+      {showUserIDCard && <UserIDCard />}
     </>
   );
 };

@@ -13,7 +13,7 @@ import "./SearchUserForm.css";
 const SearchUserForm = ({
   userName,
   setUserName,
-  setShowUserInfoCard,
+  setShowUserIDCard,
   setOpenSearchedUsersList,
 }) => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const SearchUserForm = ({
 
   const handleUserName = (event) => {
     setUserName(event.target.value);
-    setShowUserInfoCard(false);
+    setShowUserIDCard(false);
     if (event.target.value) {
       dispatch(fetchSearchedUsersList(users, event.target.value));
       setOpenSearchedUsersList(true);
@@ -34,7 +34,7 @@ const SearchUserForm = ({
     e.preventDefault();
     dispatch(fetchSingleUser(users, userName));
     setOpenSearchedUsersList(false);
-    setShowUserInfoCard(true);
+    setShowUserIDCard(true);
   };
 
   return (

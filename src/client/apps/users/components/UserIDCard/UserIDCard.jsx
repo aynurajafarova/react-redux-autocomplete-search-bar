@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import userIcon from "../../../../shared/assets/images/user-icon.svg";
+import userIcon from "../../../../shared/assets/images/icons/user-icon.svg";
+import NotFound from "../../../../shared/components/NotFound/NotFound";
 
 import "./UserIDCard.css";
 
@@ -31,7 +32,7 @@ const UserIDCard = () => {
           </div>
         </div>
       ) : (
-        "Oops! Not found"
+        <NotFound title="Oops! Not found" />
       )}
     </section>
   );

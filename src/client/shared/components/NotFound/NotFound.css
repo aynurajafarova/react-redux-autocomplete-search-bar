@@ -1,0 +1,15 @@
+.not-found {
+  flex-direction: column;
+  width: 50%;
+  background: #c8c9cb;
+  border-radius: 6px;
+  color: #24292f;
+  padding: 50px;
+}
+.not-found__title {
+  margin-top: 8%;
+}
+.not-found__title h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
