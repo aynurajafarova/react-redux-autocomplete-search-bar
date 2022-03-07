@@ -5,11 +5,31 @@
   align-items: center;
 }
 .search-user-form input {
-  min-height: 38px;
+  min-height: 40px;
   width: 50%;
   margin-right: 4%;
 }
 .search-user-form .btn-warning {
   height: 40px;
   min-width: 20%;
+}
+@media only screen and (max-width: 768px) {
+  .search-user-form {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .search-user-form {
+    width: 85%;
+    flex-direction: column;
+  }
+  .search-user-form input,
+  .search-user-form .btn-warning {
+    width: 100%;
+    margin-right: 0%;
+  }
+  .search-user-form input {
+    margin-right: 0%;
+    margin-bottom: 4%;
+  }
 }
