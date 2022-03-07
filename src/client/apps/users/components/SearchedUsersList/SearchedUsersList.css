@@ -1,7 +1,3 @@
-.searched-users-list {
-  width: 50%;
-  margin: 0 auto;
-}
 .searched-users-list ul,
 .searched-users-list p {
   border-radius: 0px 0px 6px 6px;
@@ -27,14 +23,6 @@
 }
 .searched-users-list ul li:hover {
   background-color: #cfcece;
-}
-@media only screen and (max-width: 768px) {
-  .searched-users-list {
-    width: 85%;
-  }
-  .searched-users-list ul {
-    width: 50%;
-  }
 }
 @media only screen and (max-width: 480px) {
   .searched-users-list {

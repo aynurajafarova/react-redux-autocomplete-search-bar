@@ -26,19 +26,21 @@ const UserNameSearchPage = () => {
     <Loading />
   ) : (
     <Container>
-      <Header title="Autocomplete" />
-      <SearchUserForm
-        {...{
-          userName,
-          setUserName,
-          setShowUserIDCard,
-          setOpenSearchedUsersList,
-        }}
-      />
-      {openSearchedUsersList && (
-        <SearchedUsersList {...{ setUserName, setOpenSearchedUsersList }} />
-      )}
-      {showUserIDCard && <UserIDCard />}
+      <main>
+        <Header title="Autocomplete" />
+        <SearchUserForm
+          {...{
+            userName,
+            setUserName,
+            setShowUserIDCard,
+            setOpenSearchedUsersList,
+          }}
+        />
+        {openSearchedUsersList && (
+          <SearchedUsersList {...{ setUserName, setOpenSearchedUsersList }} />
+        )}
+        {showUserIDCard && <UserIDCard />}
+      </main>
     </Container>
   );
 };
