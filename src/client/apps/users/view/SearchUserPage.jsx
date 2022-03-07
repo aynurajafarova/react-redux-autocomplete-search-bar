@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import SearchUserForm from "../components/SearchUserForm/SearchUserForm";
 import SearchedUsersList from "../components/SearchedUsersList/SearchedUsersList";
 import UserIDCard from "../components/UserIDCard/UserIDCard";
+import Header from "../../../shared/components/Header/Header";
 import { fetchUsers } from "../../../shared/redux/actions/usersAction";
 
 const UserNameSearchPage = () => {
@@ -19,6 +20,7 @@ const UserNameSearchPage = () => {
 
   return (
     <>
+      <Header title="Autocomplete" />
       <SearchUserForm
         {...{
           userName,
